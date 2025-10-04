@@ -1,34 +1,13 @@
 import heroImage from "../assets/background.jpg";
-import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
-  const heroRef = useRef(null);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollPosition = window.pageYOffset;
-        setOffset(scrollPosition * 0.5);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <section
-      ref={heroRef}
-      className="relative w-full h-[85vh] overflow-hidden"
-    >
-      {/* Parallax Background */}
+    <section className="relative w-full h-[85vh] overflow-hidden">
+      {/* Static Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute bg-fixed flex items-center justify-center inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${heroImage})`,
-          transform: `translateY(${offset}px)`,
-          transition: "transform 0.1s ease-out",
         }}
       ></div>
 

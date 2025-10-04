@@ -1,6 +1,7 @@
 // src/components/Layout.jsx
 import React from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 function Layout({ children }) {
   return (
@@ -9,7 +10,7 @@ function Layout({ children }) {
       <main>
         {children}
       </main>
-      {/* You can add Footer here later */}
+      <Footer />
     </div>
   )
 }
