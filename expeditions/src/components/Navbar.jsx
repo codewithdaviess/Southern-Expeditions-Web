@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Detect current path
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/" }, // Changed from "/home" to "/"
     { name: "Destinations", path: "/destinations" },
     { name: "Organised Trips", path: "/organized-trips" },
     { name: "Blog", path: "/blog" },
@@ -24,9 +24,9 @@ export default function Navbar() {
     <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
+        <NavLink to="/" className="flex items-center">
           <img src={logo} alt="MyTravel Logo" className="h-20 w-auto" />
-        </div>
+        </NavLink>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-10 text-gray-700 font-medium">
@@ -34,10 +34,10 @@ export default function Navbar() {
             <li key={item.name}>
               <NavLink
                 to={item.path}
-                className={
-                  location.pathname === item.path
-                    ? "text-[#9aa04f] font-bold border-b-2 border-[#9aa04f]"
-                    : "hover:text-[#9aa04f]"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#9aa04f]  border-b-2 border-[#9aa04f]"
+                    : "hover:text-[#9aa04f] transition-colors duration-200"
                 }
               >
                 {item.name}
@@ -66,27 +66,30 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-full bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Close button inside drawer */}
-        <div className="flex justify-start pt-10 px-12">
+        <div className="flex justify-between items-center p-6 border-b">
+          <NavLink to="/" onClick={toggleMenu}>
+            <img src={logo} alt="MyTravel Logo" className="h-16 w-auto" />
+          </NavLink>
           <button onClick={toggleMenu} aria-label="Close menu">
             <X size={28} className="text-gray-700" />
           </button>
         </div>
 
         {/* Mobile Links */}
-        <ul className="flex flex-col p-12 space-y-10 text-gray-700 text-lg font-medium">
+        <ul className="flex flex-col p-6 space-y-6 text-gray-700 text-lg font-medium">
           {navItems.map((item) => (
             <li key={item.name}>
               <NavLink
                 to={item.path}
-                className={
-                  location.pathname === item.path
-                    ? "text-[#9aa04f] font-bold"
-                    : "hover:text-[#9aa04f]"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#9aa04f] font-bold block py-2"
+                    : "hover:text-[#9aa04f] transition-colors duration-200 block py-2"
                 }
                 onClick={toggleMenu}
               >
