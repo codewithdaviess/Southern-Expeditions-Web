@@ -9,7 +9,7 @@ export default function Contact() {
     >
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           About Zambia Expeditions
         </h1>
         <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto">

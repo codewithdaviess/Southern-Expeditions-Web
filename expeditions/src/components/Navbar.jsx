@@ -36,7 +36,7 @@ export default function Navbar() {
                 to={item.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#9aa04f]  border-b-2 border-[#9aa04f]"
+                    ? "text-[#9aa04f] border-b-2 border-[#9aa04f]"
                     : "hover:text-[#9aa04f] transition-colors duration-200"
                 }
               >
@@ -71,10 +71,7 @@ export default function Navbar() {
         }`}
       >
         {/* Close button inside drawer */}
-        <div className="flex justify-between items-center p-6 border-b">
-          <NavLink to="/" onClick={toggleMenu}>
-            <img src={logo} alt="MyTravel Logo" className="h-16 w-auto" />
-          </NavLink>
+        <div className="flex justify-between items-end p-6">
           <button onClick={toggleMenu} aria-label="Close menu">
             <X size={28} className="text-gray-700" />
           </button>
