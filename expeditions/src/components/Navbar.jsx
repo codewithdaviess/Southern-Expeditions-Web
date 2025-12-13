@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <>
-    {/* Navbar */}
+      {/* Navbar */}
       <nav className="bg-white text-gray-800 shadow-2xl py-4 fixed w-full z-40">
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center">
@@ -68,13 +68,14 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden
-          ${isOpen ? "translate-x-0" : "translate-x-full"}
-        `}
+        className={`fixed top-0 right-0 h-full w-72 bg-[#829442] text-white shadow-lg 
+              transform transition-transform duration-300 ease-in-out z-50 md:hidden
+    ${isOpen ? "translate-x-0" : "translate-x-full"}
+  `}
       >
         <div className="flex justify-end px-4 pt-10 pb-4">
           <button onClick={() => setIsOpen(false)}>
-            <X size={24} />
+            <X size={24} className="text-white" />
           </button>
         </div>
 
@@ -84,29 +85,34 @@ function Navbar() {
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  `py-3 font-light hover:bg-gray-100 rounded-xl px-4 ${
-                    isActive ? "bg-gray-100" : "text-gray-800"
-                  }`
+                  `py-3 font-light rounded-xl px-4 transition-colors
+             ${
+               isActive
+                 ? "bg-white/15 text-white"
+                 : "text-white hover:bg-white/10"
+             }`
                 }
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </NavLink>
+
               {index < navLinks.length - 1 && (
-                <div className="border-b border-gray-200 md:hidden" />
+                <div className="border-b border-white/20 md:hidden" />
               )}
             </React.Fragment>
           ))}
 
-          <div className="border-b border-gray-200 md:hidden" />
+          <div className="border-b border-white/20 md:hidden" />
 
-          {/* Mobile Book Now Button*/}
+          {/* Mobile Book Now Button */}
           <NavLink
             to="/book"
-            className="p-4 font-regular text-white bg-[#829442] hover:text-white rounded-xl px-4"
+            className="p-4 font-medium text-[#829442] bg-white hover:text-white rounded-xl px-4"
             onClick={() => setIsOpen(false)}
           >
-            Book Now
+            {" "}
+            Book Now{" "}
           </NavLink>
         </div>
       </div>
