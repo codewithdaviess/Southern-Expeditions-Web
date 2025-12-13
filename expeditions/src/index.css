@@ -4,3 +4,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  /* Text Colors */
+  --text-primary: #333333;
+
+  /* Button Colors */
+  --primary-button: #829442;
+}
