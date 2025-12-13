@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function Layout({ children }) {
   return (
@@ -8,7 +9,7 @@ function Layout({ children }) {
       <main className="pt-28">
         {children}
       </main>
-      <footer className="bg-gray-100 py-6 text-center">Footer content</footer>
+      <Footer />
     </div>
   );
 }
