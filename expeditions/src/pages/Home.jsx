@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import DestinationGrid from "../components/DestinationGrid";
 import AboutUs from "../components/AboutUs";
+import Activities from "../components/Activities";
+import TailorMadePackage from "../components/TailorMadePackage";
 
 function Home() {
   return (
@@ -10,6 +12,7 @@ function Home() {
       <Hero />
       <DestinationGrid />
       <AboutUs />
+      <Activities />
     </Layout>
   );
 }
