@@ -30,7 +30,7 @@ function DestinationGrid() {
           <h2 className="text-xl lg:text-2xl font-bold text-dark">
             Explore Our Destinations
           </h2>
-          <p className="mt-2 text-dark/70">
+          <p className="mt-2 text-gray-600">
             Discover breathtaking places across Africa
           </p>
         </div>

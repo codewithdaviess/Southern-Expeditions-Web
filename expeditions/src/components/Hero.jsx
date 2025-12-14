@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { client } from '../lib/contentful';
+import React, { useEffect, useState } from "react";
+import { client } from "../lib/contentful";
 
 function Hero() {
   const [hero, setHero] = useState(null);
 
   useEffect(() => {
-    client.getEntries({ content_type: 'hero' })
+    client
+      .getEntries({ content_type: "hero" })
       .then((response) => {
         setHero(response.items[0].fields);
       })
@@ -20,9 +21,10 @@ function Hero() {
     <div
       className="relative w-full h-[600px] flex items-center text-left text-white"
       style={{
-        backgroundImage: bgUrl ? `url(${bgUrl})` : 'none',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: bgUrl ? `url(${bgUrl})` : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Overlay */}
