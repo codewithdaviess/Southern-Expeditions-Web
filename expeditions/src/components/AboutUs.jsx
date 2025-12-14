@@ -41,7 +41,7 @@ function AboutUs() {
             return (
               <div
                 key={item.sys.id}
-                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Icon */}
                 <div className="mb-4">

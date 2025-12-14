@@ -43,7 +43,7 @@ function Navbar() {
           {/* Book Now Button */}
           <div className="hidden md:flex">
             <NavLink
-              to="/book"
+              to="/#"
               className="bg-[#829442] text-white px-4 py-3 rounded-xl hover:opacity-90 transition-colors duration-200"
             >
               Book Now
@@ -107,8 +107,8 @@ function Navbar() {
 
           {/* Mobile Book Now Button */}
           <NavLink
-            to="/book"
-            className="p-4 font-medium text-[#829442] bg-white hover:text-white rounded-xl px-4"
+            to="/#"
+            className="p-4 font-medium text-[#829442] bg-white hover:text-[#829442] rounded-xl px-4"
             onClick={() => setIsOpen(false)}
           >
             {" "}

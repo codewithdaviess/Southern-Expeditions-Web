@@ -47,7 +47,9 @@ function DestinationGrid() {
               <img
                 src={`https:${dest.imageUrl}`}
                 alt={dest.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover
+             transform transition-transform duration-500 ease-out
+             group-hover:scale-105"
               />
 
               {/*Mobile overlay on hover*/}
@@ -61,7 +63,7 @@ function DestinationGrid() {
                 </h3>
                 <p className="text-white/80 text-sm">{dest.country}</p>
               </div>
-                {/* Desktp Overlay on hover */}
+              {/* Desktp Overlay on hover */}
               <div
                 className="hidden lg:flex absolute inset-0 bg-black/50
                               flex-col items-center justify-center text-center
