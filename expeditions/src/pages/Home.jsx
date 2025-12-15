@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import DestinationGrid from "../components/DestinationGrid";
 import AboutUs from "../components/AboutUs";
 import Activities from "../components/Activities";
-import TailorMadePackage from "../components/TailorMadePackage";
+import FAQs from "../components/FAQs";
 
 function Home() {
   return (
@@ -13,6 +13,7 @@ function Home() {
       <DestinationGrid />
       <AboutUs />
       <Activities />
+      <FAQs />
     </Layout>
   );
 }
